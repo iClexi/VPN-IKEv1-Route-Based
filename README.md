@@ -16,7 +16,7 @@
 https://youtu.be/Dkm7RHqRz5E?si=h4JCmfxSQYkSDoNK  
 
 **Documentación técnica profesional:**  
-[Ver documentación técnica profesional](docs/MichaelRobles_2025-0845_Documentacion-Tecnica-Profesional-VPN-IKEv1-Route-Based_P3.pdf)  
+[Ver documentación técnica profesional](docs/Documentacion%20Tecnica%20Profesional.pdf)  
 
 **Ubicación directa:** `docs/MichaelRobles_2025-0845_Documentacion-Tecnica-Profesional-VPN-IKEv1-Route-Based_P3.pdf`
 
