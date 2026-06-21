@@ -67,7 +67,7 @@ Para cumplir esto se implementó:
 - Un perfil IPSec aplicado al túnel.
 - Rutas estáticas hacia las redes remotas por medio del túnel.
 - Pruebas de conectividad entre PC-A y PC-B.
-- Verificación de IKEv1 e IPSec mediante comandos show.
+- Verificación de IKEv1 e interfaces mediante comandos show.
 
 ---
 
@@ -199,14 +199,11 @@ VPN-IKEv1-Route-Based/
 │   └── MichaelRobles_2025-0845_Documentacion-Tecnica-Profesional-VPN-IKEv1-Route-Based_P3.pdf
 ├── images/
 │   ├── MichaelRobles_2025-0845_01-Topologia-General_P3.png
-│   ├── MichaelRobles_2025-0845_02-Configuracion-R1-Crypto-Tunnel-Rutas_P3.png
-│   ├── MichaelRobles_2025-0845_03-Configuracion-R2-Crypto-Tunnel-Rutas_P3.png
-│   ├── MichaelRobles_2025-0845_04-Configuracion-ISP-WAN_P3.png
-│   ├── MichaelRobles_2025-0845_05-Configuracion-SW1-VLAN10_P3.png
-│   ├── MichaelRobles_2025-0845_06-PC-A-Show-IP-Ping-Remoto_P3.png
-│   ├── MichaelRobles_2025-0845_07-PC-A-Ping-Remoto-Completo_P3.png
-│   ├── MichaelRobles_2025-0845_08-R1-ISAKMP-Tunnel-Up-Up_P3.png
-│   └── MichaelRobles_2025-0845_09-R2-ISAKMP-Interface-Brief_P3.png
+│   ├── MichaelRobles_2025-0845_02-PC-A-Ping-PC-B_P3.png
+│   ├── MichaelRobles_2025-0845_03-R1-Show-Crypto-ISAKMP-SA_P3.png
+│   ├── MichaelRobles_2025-0845_04-R2-Show-Crypto-ISAKMP-SA_P3.png
+│   ├── MichaelRobles_2025-0845_05-R2-Show-IP-Interface-Brief_P3.png
+│   └── MichaelRobles_2025-0845_06-R1-Show-IP-Interface-Brief_P3.png
 ├── scripts/
 │   ├── MichaelRobles_2025-0845_R1-IKEv1-Route-Based_P3.cfg
 │   ├── MichaelRobles_2025-0845_R2-IKEv1-Route-Based_P3.cfg
@@ -583,31 +580,31 @@ La topología muestra los dos peers VPN, el router ISP y una LAN en cada extremo
 
 ### Ping desde PC-A hacia PC-B
 
-![Ping PC-A hacia PC-B](images/MichaelRobles_2025-0845_07-PC-A-Ping-Remoto-Completo_P3.png)
+![Ping PC-A hacia PC-B](images/MichaelRobles_2025-0845_02-PC-A-Ping-PC-B_P3.png)
 
 Esta prueba demuestra conectividad desde la LAN A hacia la LAN B.
 
 ### Estado IKEv1 en R1
 
-![R1 show crypto isakmp sa](images/MichaelRobles_2025-0845_08-R1-ISAKMP-Tunnel-Up-Up_P3.png)
+![R1 show crypto isakmp sa](images/MichaelRobles_2025-0845_03-R1-Show-Crypto-ISAKMP-SA_P3.png)
 
 El estado `QM_IDLE ACTIVE` confirma que la negociación IKEv1 se completó correctamente en R1.
 
 ### Estado IKEv1 en R2
 
-![R2 show crypto isakmp sa](images/MichaelRobles_2025-0845_09-R2-ISAKMP-Interface-Brief_P3.png)
+![R2 show crypto isakmp sa](images/MichaelRobles_2025-0845_04-R2-Show-Crypto-ISAKMP-SA_P3.png)
 
 R2 también muestra `QM_IDLE ACTIVE`, confirmando que ambos peers tienen la VPN levantada.
 
 ### Interfaces de R2
 
-![R2 show ip interface brief](images/MichaelRobles_2025-0845_09-R2-ISAKMP-Interface-Brief_P3.png)
+![R2 show ip interface brief](images/MichaelRobles_2025-0845_05-R2-Show-IP-Interface-Brief_P3.png)
 
 Se confirma que R2 tiene activas la interfaz WAN `20.25.8.50/30`, la interfaz LAN `192.168.84.1/24` y `Tunnel0` con la IP `172.16.45.2/30`.
 
 ### Interfaces de R1
 
-![R1 show ip interface brief](images/MichaelRobles_2025-0845_08-R1-ISAKMP-Tunnel-Up-Up_P3.png)
+![R1 show ip interface brief](images/MichaelRobles_2025-0845_06-R1-Show-IP-Interface-Brief_P3.png)
 
 Se confirma que R1 tiene activas la interfaz WAN `20.25.8.46/30`, la interfaz LAN `192.168.45.1/24` y `Tunnel0` con la IP `172.16.45.1/30`.
 
