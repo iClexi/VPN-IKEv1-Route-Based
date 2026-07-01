@@ -219,10 +219,6 @@ VPN-IKEv1-Route-Based/
 │   ├── MichaelRobles_2025-0845_SW2_P3.cfg
 │   ├── MichaelRobles_2025-0845_PC-A_P3.cfg
 │   ├── MichaelRobles_2025-0845_PC-B_P3.cfg
-│   └── MichaelRobles_2025-0845_Verification-Commands_P3.txt
-├── video/
-│   └── MichaelRobles_2025-0845_Links-Video-Repositorio_P3.txt
-├── MichaelRobles_2025-0845_Links-Video-Repositorio_P3.txt
 └── README.md
 ```
 
